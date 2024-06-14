@@ -1,0 +1,58 @@
+{
+  "name": "pavic",
+  "displayName": "pavic",
+  "description": "Best console.log works like charm",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onCommand:pavic.transformPavic"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "pavic.transformPavic",
+        "title": "Transform pavic() to console.log()"
+      }
+    ],
+    "languages": [
+      {
+        "id": "javascript",
+        "aliases": ["JavaScript", "javascript"],
+        "extensions": [".js"],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "typescriptreact",
+        "aliases": ["TypeScriptReact", "typescriptreact"],
+        "extensions": [".tsx"],
+        "configuration": "./language-configuration.json"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.90.0",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "escodegen": "^2.1.0",
+    "esprima": "^4.0.1",
+    "vscode": "^1.1.37"
+  }
+}
